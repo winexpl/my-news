@@ -1,0 +1,5 @@
+@if(news$ | async; as news) {
+    @for(article of news.articles; track article.id) {
+        <app-article-card [article]="article"></app-article-card>
+    }
+}

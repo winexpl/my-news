@@ -1,0 +1,17 @@
+/* language-selector.component.css */
+.language-selector {
+    width: 120px;
+}
+
+.language-selector .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+.flag-icon {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+}
