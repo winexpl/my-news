@@ -1,15 +1,16 @@
 <mat-toolbar class="toolbar">
-    <span>MyNews</span>
-    <a mat-button routerLink="/news" routerLinkActive="active-link">Новости</a>
+    <h1>MyNews</h1>
     <span class="spacer"></span>
-    <mat-form-field class="language-selector">
+    <a routerLink="/news" routerLinkActive="active-link">Новости</a>
+    <span class="spacer"></span>
+    <form class="language-selector">
         <mat-select [formControl]="selectedLanguage" (valueChange)="setLanguage()">
-            @for(lang of ['en', 'ru']; track lang) {
+            @for(lang of languageService.languages; track lang.code) {
             <mat-option [value]="lang">
-                <span class="fi fi-{{lang}}"></span>
-                {{lang}}
+                <span class="fi fi-{{lang.flagCode}}"></span>
+                {{lang.language}}
             </mat-option>
             }
         </mat-select>
-    </mat-form-field>
+    </form>
 </mat-toolbar>

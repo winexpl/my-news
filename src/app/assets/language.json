@@ -1,0 +1,12 @@
+[
+    {
+        "language": "Русский",
+        "code": "ru",
+        "flagCode": "ru"
+    },
+    {
+        "language": "English",
+        "code": "en",
+        "flagCode": "us"
+    }
+]

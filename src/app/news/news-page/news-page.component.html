@@ -1,5 +1,21 @@
-@if(news$ | async; as news) {
-    @for(article of news.articles; track article.id) {
-        <app-article-card [article]="article"></app-article-card>
+<section class="search-section">
+    <mat-form-field class="search-form-field">
+        <input matInput (input)="searchNews()" [formControl]="search" class="input"/>
+    </mat-form-field>
+</section>
+<section class="news-section">
+    @defer (when newsLoaded()) {
+        @if(news) {
+            <div class="news-list">
+                @for(article of news.articles; track article.url) {
+                    <app-article-card [article]="article"></app-article-card>
+                }
+            </div>
+        }
+    } @loading {
+        <mat-progress-bar mode="query"></mat-progress-bar>
     }
-}
+</section>
+
+
+

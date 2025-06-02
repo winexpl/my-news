@@ -1,5 +1,33 @@
-<mat-card>
-    <mat-card-header>{{article.title}}</mat-card-header>
-    <mat-card-subtitle>{{article.author}}</mat-card-subtitle>
-    <mat-card-content>{{article.content}}</mat-card-content>
+@if(article()) {
+<mat-card class="article-card">
+    @if(article().urlToImage) {
+        <div class="image-container">
+            <img mat-card-image [src]="article().urlToImage" [alt]="article().title">
+        </div>
+    } @else {
+        <p>ы</p>
+    }
+
+    <div class="text-content">
+        <mat-card-header>
+            <mat-card-title color="primary">
+                <a class="text" [href]="article().url" target="_blank" rel="noopener noreferrer">
+                    {{ article().title }}
+                </a>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <mat-chip>{{ article().source.name }}</mat-chip>
+                <span class="spacer"></span>
+            </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="description-content">
+            <p class="text">{{ article().description }}</p>
+            <mat-card-footer class="publish-date">
+                <mat-icon>schedule</mat-icon>
+                <span>{{ article().publishedAt.toString() | date:'dd MMMM yyyy, HH:mm' }}</span>
+            </mat-card-footer>
+        </mat-card-content>
+    </div>
 </mat-card>
+}

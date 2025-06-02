@@ -1,0 +1,22 @@
+.news-section {
+    display:block;
+    margin: 32px;
+    margin-top: 0px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction:column;
+    gap: 20px;
+}
+
+.search-form-field {
+    display:block;
+    align-items: center;
+}
+
+.search-section  {
+    margin: 32px;
+    justify-content: center;
+    align-items: center;
+}
